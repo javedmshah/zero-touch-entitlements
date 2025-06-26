@@ -195,7 +195,7 @@ Success: Attached Permission Set - developer_DERIVED to AWS Account - 1234567890
 ```
 ### Demo
 ```
-https://vimeo.com/manage/videos/1096741892/1df4ac1f6b
+[Zero Touch Entitlements with AWS Lambda](https://vimeo.com/1096741892/1df4ac1f6b)
 ```
 ## 🛡️ Security Considerations
 
