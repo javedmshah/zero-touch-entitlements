@@ -187,21 +187,11 @@ def lambda_handler(event, context):
     tbl = 'entitlements'
     table = dynamodb.Table(tbl)
     
-    #ssm_client = boto3.client('ssm')
-    #,
-    #    region_name="us-east-1",
-    #    aws_access_key_id=AWS_ACCESS_KEY_ID,
-    #    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-    #)
-    
     # get SSO instance ARN
     instances = sso_client.list_instances()['Instances'][0]
     sso_id = instances['InstanceArn']
     ids_id = instances['IdentityStoreId']
     
-    #describe_group_response = ids_client.describe_group(IdentityStoreId=ids_id, GroupId="9498e468-2051-70af-8908-ad6d93d2764f") #9498e468-2051-70af-8908-ad6d93d2764f
-    #print(describe_group_response)
-
     # Generate full list of Permission Set NAMES under the SSO Instance
     sso_permission_sets = generate_sso_permission_set_dict(sso_id, sso_client) #creates dictionary -> {PermissionSetName:ARN}
     print(sso_permission_sets)
